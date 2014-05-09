@@ -1,0 +1,6 @@
+ins 01 after 1
+set 01/ipaddr <%= @ipaddress %>
+set 01/canonical <%= @hostname %>
+<% @aliases.each do |hostalias| -%>
+set 01/alias[<%= @aliases.index(hostalias) + 1 %>] <%= hostalias %>
+<% end -%>
